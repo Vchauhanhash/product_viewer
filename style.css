@@ -1,0 +1,43 @@
+/* *{ 
+  width:603px;
+  height:396px;
+}  */
+@media only screen and (min-width:900px){
+.threesixty{
+  margin-top: 20px;
+  margin-left:5%;
+  transform: translateX(70%);
+  background: #fff;
+  width: 500px;
+  height:350px;
+  border-radius: 20px;
+  font-family: "Lato", sans-serif;
+  box-shadow: 50px 5px 100px 5px rgba(0, 0, 0, 0.40);  
+} 
+
+.threesixty-frame{
+  border-radius: 20px;
+  width:500px;
+  height:350px;
+} 
+}
+
+@media only screen and (max-width:600px) {
+.threesixty{
+  margin-top: 20px;
+  margin-left: 5%;
+  transform: translateX(0%);
+  background: #fff;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  font-family: "Lato", sans-serif;
+  box-shadow: 50px 5px 100px 5px rgb(0 0 0 / 40%);
+}
+  
+.threesixty-frame{
+  border-radius: 20px;
+  width:300px;
+  height:200px;
+} 
+}
