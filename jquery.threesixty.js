@@ -254,17 +254,17 @@ console.log(val);
 
             if(options.dragDirection === 'vertical'){
                 if(y > lastY){
-                    val = lastVal + 1;
-                }else{
                     val = lastVal - 1;
+                }else{
+                    val = lastVal + 1;
                 }
             }else{
                 if(x > lastX){
-                    val = lastVal + 1;
+                    val = lastVal - 1;
                 }else if(x === lastX){
                     return;
                 }else{
-                    val = lastVal - 1;
+                    val = lastVal + 1;
                 }
             }
 
