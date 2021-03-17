@@ -18,15 +18,33 @@
         </h1>
     <div class="container"> 
         <div class="h-100 row align-items-center">
-       <div class="col"> <div class="threesixty" data-path="/charcoal/{index}.jpg" data-count="23">
-    </div> </div>
-    </div>
+       <div class="col"> <div class="threesixty" data-path="/blue/{index}.jpg" data-count="23"></div>
     </div>   
-  
+  </div>
+  </div>
    <script type="text/javascript">
     $(document).ready(function(){
 
 var $threeSixty = $('.threesixty');
+
+$threeSixty.threeSixty({
+
+  // horizontal OR vertical
+  dragDirection: 'horizontal', 
+
+  // use arrow keys
+  useKeys: true,
+
+  // is draggable?
+  draggable: true
+  
+});
+
+});
+
+$(document).ready(function(){
+
+var $threeSixty = $('#charcoal');
 
 $threeSixty.threeSixty({
 

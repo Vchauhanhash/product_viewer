@@ -66,6 +66,7 @@ var scope,
             if(val > 0) val = thisTotal - val;
 
             val = Math.abs(val);
+            console.log(val);
 
             $this.find('.threesixty-frame').css({display: 'none'});
             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
@@ -87,7 +88,7 @@ var scope,
             if(val > 0) val = thisTotal - val;
 
             val = Math.abs(val);
-
+console.log(val);
             $this.find('.threesixty-frame').css({display: 'none'});
             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
         });
@@ -289,10 +290,10 @@ var scope,
     ThreeSixty.prototype.onKeyDown = function(e) {
         switch(e.keyCode){
             case 37: // left
-                $el.prevFrame();
+                $el.nextFrame();
                 break;
             case 39: // right
-                $el.nextFrame();
+                $el.prevFrame();
                 break;
         }
     };

@@ -87,6 +87,7 @@
     height:300px;
     box-shadow: 30px 5px 70px 5px rgba(37, 37, 37, 0.10);  
     overflow: auto;
+    /* translate: transsform(-50%,-50%); */
   } 
   h1{
     margin: auto;
