@@ -10,19 +10,68 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="jquery.threesixty.js"></script>
+    <script src="jquery.imageview.js"></script>
+
 </head>
 <body>
-    
+  <div id="fullscreen" class="container"> 
         <h1 align="center">
             ProductViewer
         </h1>
-    <div class="container"> 
-        <div class="h-100 row align-items-center">
-       <div class="col"> <div class="threesixty" data-path="/charcoal/{index}.jpg" data-count="23"></div>
-    </div>   
-  </div>
-  </div>
+  
+  
+      <div  class="threesixty" data-path="/blue/{index}.jpg" data-count="23" data-fullscreen="true"> 
+      </div>
+      <img class="enlarge" id="fullscreen" onclick="openFullscreen()" src="expand.jpg" width="2%" height="3%">
+  </div> 
+    <br>
+     <!-- <div class="image-row"> 
+      <img src="/Blue/0.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/3.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/5.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/7.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/9.jpg" width="50px" height="50px" class="thumbing"> 
+      <img src="/Blue/11.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/15.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/17.jpg" width="50px" height="50px" class="thumbing">
+      <img src="/Blue/19.jpg" width="50px" height = "50px"class="thumbing">
+      <img src="/Blue/22.jpg" width="50px" height = "50px"class="thumbing">
+</div> -->
    <script type="text/javascript">
+	$('#fullscreen').imageview();
+
+   var elem = document.getElementById("fullscreen");
+function openFullscreen() {
+
+
+  /* If fullscreen mode is available, show the element in fullscreen */
+  // var x = document.getElementById("inout");
+  // if (x.innerHTML === "ZoomIN") {
+  //   x.innerHTML = "ZoomOUT";
+  // } else if (x.innerHTML === "ZoomOUT"){
+  //   x.innerHTML = "ZoomIN";
+  // }  
+ 
+  if (
+    document.fullscreenEnabled || /* Standard syntax */
+    document.webkitFullscreenEnabled || /* Safari */
+    document.msFullscreenEnabled /* IE11 */
+  ) {
+    /* Show the element in fullscreen */
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen(); /* Standard syntax */
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+           
     $(document).ready(function(){
 
 var $threeSixty = $('.threesixty');
@@ -36,7 +85,9 @@ $threeSixty.threeSixty({
   useKeys: true,
 
   // is draggable?
-  draggable: true
+  draggable: true,
+
+  fullscreenEnabled: true,
   
 });
 
@@ -56,10 +107,20 @@ $threeSixty.threeSixty({
 
   // is draggable?
   draggable: true
-  
+
 });
 
 });
+
+//image change script
+  //
+  $(document).ready(function(){
+$('.thumbing').click(function(){
+$('.threesixty-frame').attr('src',this.src);
+});
+
+});
+
 </script> 
 </body>
 </html>
