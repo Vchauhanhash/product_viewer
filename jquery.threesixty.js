@@ -158,14 +158,17 @@ console.log(val);
         $this.html('');
         $this.removeClass('preloading');
 
+ 
         // add 360 images
         for(i; i < l; i++){
             var display = (i === 0) ? 'block' : 'none';
-            html += '<img class="threesixty-frame"  style="display:' + display + ';" " data-index="' + i + '" src="' + pathTemplate.replace('{index}', i) + '"/>';
+            html += '<img id="max" class="threesixty-frame"  style="display:' + display + ';" " data-index="' + i + '" src="' + pathTemplate.replace('{index}', i) + '"/> ';
+         
         }
         $this.html(html);
 
         this.attachHandlers(objIndex);
+    // zoom images
     };
 
     var startY = 0,
@@ -335,3 +338,44 @@ console.log(val);
     };
 
 })( jQuery, window, document );
+
+
+// zoom Image Jquery
+
+// jQuery(function($){
+
+//     $('.threesixty').click(function(){
+//         var img=$('.threesixty-frame').attr("src");
+//         var appear_image = "<div id='appear_image_div' onClick='closeImage()'></div>";
+//         appear_image = appear_image.concat("<img id='appear_image' src='"+img+"'/>");
+//         appear_image = appear_image.concat("<img id='close_image' onClick='closeImage()' src='cross.png'/>");
+//         $('body').append(appear_image);
+//     });
+// });
+// function closeImage(){
+//     $('#appear_image_div').remove();
+//     $('#appear_image').remove();
+//     $('#close_image').remove();
+// }
+
+$(document).ready(function(){
+
+    var $threeSixty = $('.threesixty');
+    
+    $threeSixty.threeSixty({
+    
+      // horizontal OR vertical
+      dragDirection: 'horizontal', 
+    
+      // use arrow keys
+      useKeys: true,
+    
+      // is draggable?
+      draggable: true
+      
+    });
+    
+    });
+
+ 
+
