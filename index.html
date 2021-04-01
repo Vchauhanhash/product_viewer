@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="jquery.threesixty.js"></script>
-   
+    <script src="jquery.imageview.js"></script>
 
 </head>
 <body>
@@ -20,23 +20,21 @@
         </h1>
   
   
-      <div  class="threesixty" data-path="/charcoal/{index}.jpg" data-count="23" data-fullscreen="true"> 
+      <div  class="threesixty" data-path="/charcoal/{index}.jpg" data-count="23">  
       </div>
       <img class="enlarge" id="fullscreen" onclick="openFullscreen()" src="expand.jpg" width="2%" height="3%">
   </div> 
     <br>
-     <!-- <div class="image-row"> 
-      <img src="/Blue/0.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/3.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/5.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/7.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/9.jpg" width="50px" height="50px" class="thumbing"> 
-      <img src="/Blue/11.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/15.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/17.jpg" width="50px" height="50px" class="thumbing">
-      <img src="/Blue/19.jpg" width="50px" height = "50px"class="thumbing">
-      <img src="/Blue/22.jpg" width="50px" height = "50px"class="thumbing">
-</div> -->
+    <div class="image-row"> 
+      <img id="0" src="/charcoal/0.jpg" width="50px" height ="50px" class="thumbing">
+      <img id="3" src="/charcoal/3.jpg" width="50px" height ="50px" class="thumbing">
+      <img id="5" src="/charcoal/5.jpg" width="50px" height ="50px" class="thumbing">
+      <img id="11" src="/charcoal/14.jpg" width="50px" height ="50px" class="thumbing">
+      <img id="16" src="/charcoal/16.jpg" width="50px" height ="50px" class="thumbing">
+      <img id="19" src="/charcoal/19.jpg" width="50px" height = "50px"class="thumbing">
+      <img id="22" src="/charcoal/22.jpg" width="50px" height = "50px"class="thumbing">
+</div>
+     
    <script type="text/javascript">
 	$('#fullscreen').imageview();
 
@@ -112,14 +110,35 @@ $threeSixty.threeSixty({
 
 });
 
-//image change script
-  //
-  $(document).ready(function(){
-$('.thumbing').click(function(){
-$('.threesixty-frame').attr('src',this.src);
-});
+// $(document).ready(function(){ 
+//         $('.thumbing').click(function(){ 
+//                 var img_id; 
+//             img_id =$('.thumbing').attr('id');
+//             console.log(img_id)
+//         });
+//     });
 
-});
+
+//image change script
+  
+
+
+//   $(document).ready(function(){
+// $('.thumbing').click(function(){
+// $('.threesixty-frame').attr('src',this.src);
+// });
+
+// });
+
+//  $(document).ready(function(){
+//   var img_id;
+// $('.thumbing').click(function(){
+//      img_id = parseInt($(this).attr('id')); 
+
+//      console.log(img_id)
+// });
+// });
+
 
 </script> 
 </body>

@@ -79,6 +79,15 @@
     height:300px;
   } 
   }  */ 
+  .image-row{
+    align-content: center;
+    margin-left: 35%;
+    margin-right:35%;
+    position: relative;
+    /* display: flex;
+    justify-content: space-between;
+    overflow:auto; */
+  }
 :fullscreen .threesixty-frame{
   width : 50%;
   height: 30%;
@@ -90,8 +99,8 @@
   top:10%;
   left: 90%;
   position: absolute;
-  background-color: white;
-  mix-blend-mode:multiply; 
+  background-color: white;     
+  mix-blend-mode:multiply;        
 }
   .threesixty-frame{
     margin: 0 auto;
@@ -191,8 +200,8 @@
     }
     :fullscreen .enlarge{
       top:10%;
-      left:2%;
-      mix-blend-mode: color;
+      left:80%;
+      mix-blend-mode: multiply;
     }
 
   }

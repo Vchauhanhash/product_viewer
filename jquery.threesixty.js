@@ -8,7 +8,6 @@
 
 ;(function ( $, window, document, undefined ) {
 
-
 var scope,
     pluginName = 'threeSixty',
     defaults = {
@@ -43,6 +42,7 @@ var scope,
         this.init();
     }
 
+
     // PUBLIC API -----------------------------------------------------
 
     $.fn.destroy = ThreeSixty.prototype.destroy = function(){
@@ -56,8 +56,7 @@ var scope,
             var $this = $(this),
                 val = $this.data('lastVal') || 0,
                 thisTotal = $this.data('count');
-
-            val = val + 1;
+             val = val + 1;
 
             $this.data('lastVal', val);
 
@@ -67,9 +66,19 @@ var scope,
 
             val = Math.abs(val);
             console.log(val);
-
+           //image change 
+        //     img_id = parseInt($('.thumbing').attr('id')); 
+        //     currentFrame=val;
+        //     var newFrame= img_id;
+        //   console.log(currentFrame);
+        //   console.log(val);
+        //   if(newFrame!=currentFrame){
+        //     $this.find('.threesixty-frame').css({display: 'none'});
+        //     $this.find('.threesixty-frame:eq(' + newFrame + ')').css({display: 'block'});
+        //   }
             $this.find('.threesixty-frame').css({display: 'none'});
             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
+           
         });
     };
 
@@ -78,7 +87,6 @@ var scope,
             var $this = $(this),
                 val = $this.data('lastVal') || 0,
                 thisTotal = $this.data('count');
-
             val = val - 1;
 
             $this.data('lastVal', val);
@@ -86,16 +94,51 @@ var scope,
             if(val >= thisTotal) val = val % (thisTotal - 1);
             else if(val <= -thisTotal) val = val % (thisTotal - 1);
             if(val > 0) val = thisTotal - val;
-
             val = Math.abs(val);
-console.log(val);
+          
+            //imagechange
+        //    img_id = parseInt($('.thumbing').attr('id')); 
+        //     currentFrame=val;
+        //     var newFrame= img_id;
+        //   console.log(currentFrame);
+        //   console.log(val);
+        //   if(newFrame!=currentFrame){
+        //     $this.find('.threesixty-frame').css({display: 'none'});
+        //     $this.find('.threesixty-frame:eq(' + newFrame + ')').css({display: 'block'});
+        //   }
+        
             $this.find('.threesixty-frame').css({display: 'none'});
             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
+    
         });
     };
 
+   //thumb-image 
+       
+        $(document).ready(function(){
+            var img_id;
+          $('.thumbing').click(function(){
+            
+               img_id = parseInt($(this).attr('id')); 
+               console.log(img_id) 
 
-
+               $('.threesixty').find('.threesixty-frame').css({display: 'none'});
+               $('.threesixty').find('.threesixty-frame:eq(' + img_id + ')').css({display: 'block'});
+               console.log(img_id)     
+//        ThreeSixty.prototype.newFrame = function(){
+//         $(this).each(function(i){
+//             var $this = $(this),
+//                 val = $this.data('lastVal') 
+//                 thisTotal = $this.data('count');
+//                 val = img_id;
+//                 console.log(img_id) 
+//             $this.find('.threesixty-frame').css({display: 'none'});
+//             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
+    
+// });
+// };
+});
+}); 
     // PRIVATE METHODS -------------------------------------------------
 
     /**
@@ -163,12 +206,11 @@ console.log(val);
         for(i; i < l; i++){
             var display = (i === 0) ? 'block' : 'none';
             html += '<img id="max" class="threesixty-frame"  style="display:' + display + ';" " data-index="' + i + '" src="' + pathTemplate.replace('{index}', i) + '"/> ';
-         
         }
         $this.html(html);
 
         this.attachHandlers(objIndex);
-    // zoom images
+
     };
 
     var startY = 0,
@@ -338,25 +380,6 @@ console.log(val);
     };
 
 })( jQuery, window, document );
-
-
-// zoom Image Jquery
-
-// jQuery(function($){
-
-//     $('.threesixty').click(function(){
-//         var img=$('.threesixty-frame').attr("src");
-//         var appear_image = "<div id='appear_image_div' onClick='closeImage()'></div>";
-//         appear_image = appear_image.concat("<img id='appear_image' src='"+img+"'/>");
-//         appear_image = appear_image.concat("<img id='close_image' onClick='closeImage()' src='cross.png'/>");
-//         $('body').append(appear_image);
-//     });
-// });
-// function closeImage(){
-//     $('#appear_image_div').remove();
-//     $('#appear_image').remove();
-//     $('#close_image').remove();
-// }
 
 $(document).ready(function(){
 
