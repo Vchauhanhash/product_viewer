@@ -10,31 +10,38 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="jquery.threesixty.js"></script>
-    <script src="jquery.imageview.js"></script>
-
+   <script src="jquery.imageview.js"></script>
+   <script src="https://kit.fontawesome.com/8d4f57cade.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="fullscreen" class="container"> 
-        <h1 align="center">
+  <div class="container"> 
+  
+   <h1 align="center">
             ProductViewer
         </h1>
-  
-  
-      <div  class="threesixty" data-path="/charcoal/{index}.jpg" data-count="23">  
-      </div>
-      <img class="enlarge" id="fullscreen" onclick="openFullscreen()" src="expand.jpg" width="2%" height="3%">
-  </div> 
-    <br>
+      <div id="fullscreen">
+        <div  class="threesixty" data-path="/charcoal/{index}.jpg" data-count="23">      
+      </div> 
+      <div class="drag-text">
+
+        <span class="left" aria-hidden="true"></span>
+        Drag to Rotate.
+        <span class="left" aria-hidden="true"></span>
+        </div>
+      <span class="enlarge" id="fullscreen" onclick="openFullscreen()" ><i class="fas fa-expand"></i></span>
+      <!-- <img class="enlarge" id="fullscreen" onclick="openFullscreen()" src="expand.jpg" width="2%" height="38> -->
+      
+    </div>
     <div class="image-row"> 
-      <img id="0" src="/charcoal/0.jpg" width="50px" height ="50px" class="thumbing">
-      <img id="3" src="/charcoal/3.jpg" width="50px" height ="50px" class="thumbing">
-      <img id="5" src="/charcoal/5.jpg" width="50px" height ="50px" class="thumbing">
-      <img id="11" src="/charcoal/14.jpg" width="50px" height ="50px" class="thumbing">
-      <img id="16" src="/charcoal/16.jpg" width="50px" height ="50px" class="thumbing">
-      <img id="19" src="/charcoal/19.jpg" width="50px" height = "50px"class="thumbing">
-      <img id="22" src="/charcoal/22.jpg" width="50px" height = "50px"class="thumbing">
+      <img id="0" src="/charcoal/0.jpg" width="60px" height ="60px" class="thumbing">
+      <img id="3" src="/charcoal/3.jpg" width="60px" height ="60px" class="thumbing">
+      <img id="14" src="/charcoal/14.jpg" width="60px" height="60px" class="thumbing">
+      <img id="16" src="/charcoal/16.jpg" width="60px" height="60px" class="thumbing">
+      <img id="19" src="/charcoal/19.jpg" width="60px" height="60px"class="thumbing">
+      <img id="22" src="/charcoal/22.jpg" width="60px" height="60px"class="thumbing">
 </div>
-     
+
+</div>    
    <script type="text/javascript">
 	$('#fullscreen').imageview();
 
@@ -93,7 +100,7 @@ $threeSixty.threeSixty({
 
 $(document).ready(function(){
 
-var $threeSixty = $('#charcoal');
+var $threeSixty = $('.threesixty');
 
 $threeSixty.threeSixty({
 
