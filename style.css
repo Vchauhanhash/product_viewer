@@ -108,7 +108,7 @@ div{
 /* thumb-images */
  
 .image-row{
-   max-width:100%;
+   max-width:90%;
    overflow: auto;
    display: flex;
    justify-content: center;
