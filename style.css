@@ -237,7 +237,7 @@ color:#444;
       font-size: small;
     }
 
-    :-webkit-fullscreen .threesixty-frame{
+    :fullscreen .threesixty-frame{
       width: 150%;
       height: 60%;
       margin-top: 15%;
@@ -249,8 +249,8 @@ color:#444;
       position: absolute;
     }
     :fullscreen .enlarge{
-      top:2%;
-      left:90%;
+      top:1%;
+      left:95%;
     }
     .fas{
       font-size:smaller;
