@@ -88,10 +88,10 @@ color:#444;
 
   }
   :fullscreen .drag-text{
-    margin-top: -25%;
+    margin-top: -20%;
     position: relative;
     /* margin: 0 auto; */
-    transform:translateX(175%);
+    /* transform:translateX(175%); */
   }
 
 /* Responsive Media Query */
@@ -199,7 +199,7 @@ color:#444;
         height:70vh !important;
         }
         :fullscreen .drag-text {
-          position:none !important;
+          margin-top:0;
           transform: translateX(0) !important;
       }
     }
@@ -285,7 +285,9 @@ color:#444;
     }
   
   } */
-
+:fullscreen .drag-text{
+  margin-top:60%;
+}
 
   .drag-text{
     /* margin:0 auto ; */
