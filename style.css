@@ -89,7 +89,7 @@ color:#444;
   }
   :fullscreen .drag-text{
     margin-top: -25%;
-    position: absolute;
+    position: relative;
     /* margin: 0 auto; */
     transform:translateX(175%);
   }
@@ -107,8 +107,8 @@ color:#444;
     transform: translate(-3%,-10%);
     overflow: hidden;
   } 
-  :fullscreen.drag-text{
-    margin-top:-30%;
+  :fullscreen .drag-text{
+    transform: translateX(0);
   }
 
   :fullscreen .threesixty-frame{
@@ -118,9 +118,9 @@ color:#444;
     margin-top:15%;
   }    
   .enlarge{
-    top:7%;
-    left: 75%;
-    position:fixed;
+    top:5%;
+    left: 90%;
+
   }
   :fullscreen .enlarge{
     z-index: 1;
@@ -198,9 +198,11 @@ color:#444;
         width: 90vw;
         height:70vh !important;
         }
-      
+        :fullscreen .drag-text {
+          position:none !important;
+          transform: translateX(0) !important;
       }
-
+    }
   @media only screen and (max-width:500px){
     .threesixty-frame{
       margin: 0 ;
@@ -214,11 +216,11 @@ color:#444;
     }
 
     :fullscreen .threesixty-frame{
-      width: 200%;
-      height: 80%;
-      margin-top: 15%;
-      margin: auto;
-    }  
+      width: 130% !important;
+    height: 80% !important;
+    margin-top: 28%;
+    margin-left: -15%;
+  }
     .enlarge{
       top: 5%;
       left: 90%;
@@ -251,11 +253,14 @@ color:#444;
           margin-top: 2%;
           margin-left: auto;
           margin-right: auto;
-       transform: translate(0)!important;
-        width: 90vw;
+         transform: translate(0)!important;
+        width: 90vw !important;
         height:70vh !important;
         }
-        
+
+        :fullscreen .drag-text{
+          transform: translateX(0);
+        }
         .drag-text{
           margin:0 auto ;
           font-size: small !important;
@@ -330,3 +335,4 @@ color:#444;
  top: 15%;
 }
 
+  
