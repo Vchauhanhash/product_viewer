@@ -216,8 +216,8 @@ color:#444;
     }
 
     :fullscreen .threesixty-frame{
-      width: 130% !important;
-    height: 80% !important;
+      width: 130vw !important;
+    height: 70vh !important;
     margin-top: 28%;
     margin-left: -15%;
   }
