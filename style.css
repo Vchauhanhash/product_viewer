@@ -96,6 +96,13 @@
   
   
   */ 
+/* conatiner */
+.container{
+  box-shadow: 0 0 15px -4px rgb(220 220 220);
+  border-radius: 5px;
+  margin-top: 2%;
+flex-wrap: wrap;
+}
 
 div{
   max-width: 90%;
@@ -108,11 +115,13 @@ div{
 /* thumb-images */
  
 .image-row{
-   max-width:90%;
-   overflow: auto;
+  margin: 0 auto;
+   max-width:35%;
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
    align-items: center;
+   align-content: center;
+
   }
   
   /* fullscreen */
@@ -142,15 +151,14 @@ div{
   } 
   h1{
     margin:0 auto;
+    margin-top: 2%;
   }
   .enlarge{
-    z-index:1;
-    top:10%;
+    z-index:10;
+    top:15%;
     left:60%;
     position: absolute;
     border:0;
-    mix-blend-mode: multiply;
-    border-style: none;
   
   }
 .fas{
@@ -159,20 +167,24 @@ color:#444;
   }
 
 /* Responsive Media Query */
-@media only screen and (min-width:769px) and (max-width:1300px){
+@media only screen and (min-width:769px) and (max-width:1100px){
   .threesixty-frame{
     margin: 0 auto;
     width:40%; 
   } 
+  :fullscreen.drag-text{
+    margin-top:-30%;
+  }
 
   :fullscreen .threesixty-frame{
-    margin: -1 auto;
+    margin: 0 auto;
     width :100%;
+    margin-top:-20%;
   }    
   .enlarge{
-    top: 5%;
-    left: 65%;
-    position: absolute;
+    top:12%;
+    left: 60%;
+    position:fixed;
   }
   :fullscreen .enlarge{
     z-index: 1;
@@ -202,7 +214,7 @@ color:#444;
 
     }    
     .enlarge{
-      top: 7%;
+      top: 10%;
       left: 70%;
       position: absolute;
     }
@@ -233,7 +245,7 @@ color:#444;
     }  
     .enlarge{
       top: 7%;
-      left: 65%;
+      left: 75%;
       position: absolute;
     }
     :fullscreen .enlarge{
@@ -244,14 +256,43 @@ color:#444;
       font-size:smaller;
         }
   }
+@media only screen and (max-width:300px){
+  .image-row img{
+    width: 40px;
+    height:40px;
+  }
 
+  @media only screen and (min-device-width: 1024px)
+   and (max-device-height: 1366px) 
+    and (orientation: portrait)  {
+
+      .enlarge{
+      top:0%!important;
+      left: 80% !important;
+      position: absolute !important;
+    }
+  
+  }
+
+
+  .drag-text{
+    margin:0 auto ;
+    font-size: small !important;
+  }
+  .drag-text::after{
+    font-size: small;
+  }
+  .drag-text::before{
+    font-size: small;
+  }
+}
 /* Text */
 .drag-text{
   text-align: center; 
   color:rgb(3, 143, 77);
   z-index: 10;
   font-size: medium;
-  margin-top:-5%;
+  margin-top: -5%;
 }
 .drag-text::before{
   content: "\2039";
@@ -278,3 +319,7 @@ color:#444;
     margin-left: 5px;
     margin-right: 5px;
 }
+#text{
+ top: 15%;
+}
+

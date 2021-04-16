@@ -50,8 +50,9 @@ var scope,
         $(this).removeData();
         $el.html('');
     };
-
+    
     $.fn.nextFrame = ThreeSixty.prototype.nextFrame = function(){
+         
         $(this).each(function(i){
             var $this = $(this),
                 val = $this.data('lastVal') || 0,
@@ -63,9 +64,9 @@ var scope,
             if(val >= thisTotal) val = val % (thisTotal - 1);
             else if(val <= -thisTotal) val = val % (thisTotal - 1);
             if(val > 0) val = thisTotal - val;
-
             val = Math.abs(val);
-            console.log(val);
+          console.log(val)
+      
            //image change 
         //     img_id = parseInt($('.thumbing').attr('id')); 
         //     currentFrame=val;
@@ -76,9 +77,10 @@ var scope,
         //     $this.find('.threesixty-frame').css({display: 'none'});
         //     $this.find('.threesixty-frame:eq(' + newFrame + ')').css({display: 'block'});
         //   }
+    
             $this.find('.threesixty-frame').css({display: 'none'});
             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
-           
+
         });
     };
 
@@ -106,7 +108,8 @@ var scope,
         //     $this.find('.threesixty-frame').css({display: 'none'});
         //     $this.find('.threesixty-frame:eq(' + newFrame + ')').css({display: 'block'});
         //   }
-        
+    
+       
             $this.find('.threesixty-frame').css({display: 'none'});
             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
     
@@ -120,25 +123,41 @@ var scope,
           $('.thumbing').click(function(){
             
                img_id = parseInt($(this).attr('id')); 
-               console.log(img_id) 
-
-               $('.threesixty').find('.threesixty-frame').css({display: 'none'});
-               $('.threesixty').find('.threesixty-frame:eq(' + img_id + ')').css({display: 'block'});
-               console.log(img_id)     
-//        ThreeSixty.prototype.newFrame = function(){
-//         $(this).each(function(i){
-//             var $this = $(this),
-//                 val = $this.data('lastVal') 
-//                 thisTotal = $this.data('count');
-//                 val = img_id;
-//                 console.log(img_id) 
-//             $this.find('.threesixty-frame').css({display: 'none'});
-//             $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
-    
-// });
-// };
+               //console.log(img_id) 
+               var currentFrame = parseInt($('.threesixty').find(':visible').attr('data-index'));
+               console.log('currentframe:'+ currentFrame)  
+               //framebyframe-drAG
+             var targetFrame=img_id
+               console.log('targetframe:' + targetFrame)  
+               var i=0 
+               if(currentFrame!=targetFrame && currentFrame<targetFrame){
+                
+                for (let index = currentFrame; index <= targetFrame;index++) {
+                       setTimeout(function() {
+                            $('.threesixty').find('.threesixty-frame').css({display: 'none'});   
+                               $('.threesixty').find('.threesixty-frame:eq(' + index + ')').css({display: 'block'});
+                           console.log(index)
+                    console.log(index)  }, 20*i)
+                i++}
+             
+                }
+        
+                else if(currentFrame!=targetFrame && currentFrame>targetFrame){
+                
+                for (let indexSec = currentFrame; indexSec >= targetFrame; indexSec--){
+                       setTimeout(function() {  
+                    $('.threesixty').find('.threesixty-frame').css({display: 'none'});
+                    $('.threesixty').find('.threesixty-frame:eq(' + indexSec + ')').css({display: 'block'});
+                    console.log(indexSec)
+                    console.log('frame:'+indexSec)  }, 20*i)
+                i++}
+             
+                }
+          
+                
 });
 }); 
+               
     // PRIVATE METHODS -------------------------------------------------
 
     /**
@@ -203,14 +222,16 @@ var scope,
 
  
         // add 360 images
-        for(i; i < l; i++){
+        for(i; i < l; i++){      
             var display = (i === 0) ? 'block' : 'none';
             html += '<img id="max" class="threesixty-frame"  style="display:' + display + ';" " data-index="' + i + '" src="' + pathTemplate.replace('{index}', i) + '"/> ';
-        }
+        
+    }
+    
         $this.html(html);
 
         this.attachHandlers(objIndex);
-
+   
     };
 
     var startY = 0,
