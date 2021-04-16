@@ -88,7 +88,7 @@ color:#444;
 
   }
   :fullscreen .drag-text{
-    margin-top: 0%;
+    margin-top: -25%;
     position: relative;
     /* margin: 0 auto; */
     transform:translateX(175%);
@@ -207,8 +207,8 @@ color:#444;
     .threesixty-frame{
       margin: 0 ;
       align-content: center;
-      width:95vw !important;
-      height:50vh !important;
+      width:100vw !important;
+      height:60vh !important;
       overflow: hidden !important;;
     }
     h1{
@@ -254,8 +254,8 @@ color:#444;
           margin-left: auto;
           margin-right: auto;
          transform: translate(0)!important;
-        width: 90vw !important;
-        height:70vh !important;
+        width: 95vw !important;
+        height:80vh !important;
         }
 
         :fullscreen .drag-text{
