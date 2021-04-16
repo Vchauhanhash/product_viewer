@@ -48,10 +48,13 @@
 </div>
 
    <script type="text/javascript">
-  
+  $('.enlarge').hide();
+  $('.container').hide();
   $('.image-row').hide();
   $('.drag-text').hide();
 $(window).on("load",function(){
+  $('.enlarge').show();
+  $('.container').show();
   $('.drag-text').show();
     $('.image-row').show();
 });
