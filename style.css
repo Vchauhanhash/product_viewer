@@ -312,7 +312,7 @@ color:#444;
   display: flex;
     position: absolute;
     align-content: center;
-    /* left: 12%; */
+     top: 60%; 
     width: 100%;
 }
 .drag-text::before{
