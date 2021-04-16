@@ -265,6 +265,7 @@ color:#444;
         .drag-text{
           margin:0 auto ;
           font-size: small !important;
+          top: 60%;
         }
       }
 
@@ -300,6 +301,7 @@ color:#444;
     font-size: small;
   }
 }
+
 /* Text */
 .drag-text{
   text-align: center; 
@@ -307,7 +309,11 @@ color:#444;
   z-index: 11;
   font-size: medium;
 
-  
+  display: flex;
+    position: absolute;
+    align-content: center;
+    /* left: 12%; */
+    width: 100%;
 }
 .drag-text::before{
   content: "\2039";
