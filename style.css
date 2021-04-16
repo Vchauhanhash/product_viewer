@@ -260,6 +260,7 @@ color:#444;
 
         :fullscreen .drag-text{
           transform: translateX(0);
+          margin-top: 0;
         }
         .drag-text{
           margin:0 auto ;
